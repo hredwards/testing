@@ -1391,7 +1391,7 @@ def update_graph(n_clicks, derived_virtual_selected_rows, dt_rows):
         db_name = [{'label': row['DB_name'], 'value': row['DB_name']} for row in selected_rows]
         db_value = db_name[0]
 
-        jsonStr = convert_to_json(new_df)
+        jsonStr1 = convert_to_json(new_df)
 
         # update range for raw data graph
         raw_range_max = np.max(new_df["Microcystin (ug/L)"])
@@ -1431,7 +1431,7 @@ def update_graph(n_clicks, derived_virtual_selected_rows, dt_rows):
         col_value = colNames[0]
         col_value_next = colNames[1]
 
-        return jsonStr, tn_max, tn_value, tp_max, tp_value, years_options, years_options, locs_options, locs_value, col_options, col_value, col_options, col_value, col_options, col_value, raw_range_max, raw_range_value, col_options, col_value, col_options, col_value_next,  # db_name, db_value
+        return jsonStr1, tn_max, tn_value, tp_max, tp_value, years_options, years_options, locs_options, locs_value, col_options, col_value, col_options, col_value, col_options, col_value, raw_range_max, raw_range_value, col_options, col_value, col_options, col_value_next,  # db_name, db_value
 
 
 # Update the download link to contain the data from the selected datasheets
