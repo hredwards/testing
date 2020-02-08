@@ -638,29 +638,6 @@ def plot_line(x_data, y_data, layout):
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 # Website layout HTML code
 app.layout = html.Div(children=[
     html.Div([
@@ -680,10 +657,10 @@ app.layout = html.Div(children=[
                 # TODO: datasheet outline is required for db to parse data correctly from spreadsheet, need to make this clearer to
                 # users when we go live
                 html.A('Download Datasheet Outline File',
-                       id='example-outline-link',
-                       href='GLEON_GMA_Example.csv',
-                       target='_blank',
-                       download='GLEON_GMA_Example.csv')
+                    id='example-outline-link',
+                    href='GLEON_GMA_Example.csv',
+                    target='_blank',
+                    download='GLEON_GMA_Example.csv')
             ], className="row"),
 
             # Upload New Data questionnaire
