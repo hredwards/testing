@@ -658,9 +658,9 @@ app.layout = html.Div(children=[
                 # users when we go live
                 html.A('Download Datasheet Outline File',
                     id='example-outline-link',
-                    href='testing/GLEON_GMA_Example.csv',
+                    href="Hallie_GLEON_GMA_Example.xlsx",
                     target='_blank',
-                    download='testing/GLEON_GMA_Example.csv')
+                    download="GLEON_GMA_Example.xlsx")
             ], className="row"),
 
             # Upload New Data questionnaire
