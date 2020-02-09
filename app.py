@@ -2,28 +2,25 @@ import dash
 import dash_core_components as dcc
 import dash_html_components as html
 import dash_table
-#from dash.dependencies import Input, Output
+# from dash.dependencies import Input, Output
 import numpy as np
 import pandas as pd
-#import data_analysis as da
-#from settings import months, metadataDB
-#import db_engine as db
-#from db_info import db_info
+# import data_analysis as da
+# from settings import months, metadataDB
+# import db_engine as db
+# from db_info import db_info
 import urllib.parse
 import plotly.graph_objs as go
 import re
 import datetime
 
-
 app = dash.Dash(__name__)
-server=app.server
+server = app.server
 
 metadataDB = pd.read_csv("MetadataDB.csv")
 months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
 USEPA_LIMIT = 4
 WHO_LIMIT = 20
-
-
 
 styles = {
     'pre': {
@@ -62,6 +59,7 @@ class db_info:
         self.db_ancillary_url = ''
         self.db_num_lakes = 0
         self.db_num_samples = 0
+
 
 def convert_to_json(current_dataframe):
     '''
@@ -399,8 +397,8 @@ def tn_tp(tn_val, tp_val, current_df):
 
     dat = current_df[
         (current_df["Total Nitrogen (ug/L)"] >= min_tn) & (current_df["Total Nitrogen (ug/L)"] <= max_tn) & (
-                    current_df["Total Phosphorus (ug/L)"] >= min_tp) & (
-                    current_df["Total Phosphorus (ug/L)"] <= max_tp)]
+                current_df["Total Phosphorus (ug/L)"] >= min_tp) & (
+                current_df["Total Phosphorus (ug/L)"] <= max_tp)]
     MC_conc = dat['Microcystin (ug/L)']
     # make bins
     b1 = dat[MC_conc <= USEPA_LIMIT]
@@ -636,8 +634,6 @@ def plot_line(x_data, y_data, layout):
     return fig
 
 
-
-
 # Website layout HTML code
 app.layout = html.Div(children=[
     html.Div([
@@ -657,10 +653,10 @@ app.layout = html.Div(children=[
                 # TODO: datasheet outline is required for db to parse data correctly from spreadsheet, need to make this clearer to
                 # users when we go live
                 html.A('Download Datasheet Outline File',
-                    id='example-outline-link',
-                    href='/GLEON_GMA_Example.xlsx',
-                    target='_blank',
-                    download='GLEON_GMA_Example.xlsx')
+                       id='example-outline-link',
+                       href='assets/GLEON_GMA_Example.csv',
+                       target='_blank',
+                       download='GLEON_GMA_Example.csv')
             ], className="row"),
 
             # Upload New Data questionnaire
